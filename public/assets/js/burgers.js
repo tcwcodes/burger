@@ -5,11 +5,12 @@ $(function() {
         var newBurger = {
             burger_name: $("#burger-input").val().trim()
         };
-        $.post("/api/burgers", {
+        console.log(newBurger);
+        $.ajax("/api/burgers", {
             type: "POST",
             data: newBurger
         }).then(function() {
-            location.reload
+            location.reload();
         });
     });
 
