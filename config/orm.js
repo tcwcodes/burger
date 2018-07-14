@@ -8,15 +8,15 @@ var orm = {
             callback(result);
         });
     },
-    insertOne: function(tableInput, whatToSelect, newBurger, callback) {
+    insertOne: function(tableInput, whatToSelect, newValue, callback) {
         var queryString = "INSERT INTO " + tableInput;
         queryString += " (";
         queryString += whatToSelect;
         queryString += ") "
         queryString += "VALUES ('";
-        queryString += newBurger;
+        queryString += newValue;
         queryString += "') "
-        connection.query(queryString, newBurger, function(err, result) {
+        connection.query(queryString, newValue, function(err, result) {
             if (err) throw err;
             callback(result);
         });
